@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Binance Futures Testnet Bot</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <div class="page">
+      <div class="panel">
+        <header>
+          <p class="eyebrow">Testnet Trading</p>
+          <h1>Futures Control Panel</h1>
+          <p class="subtitle">Place market or limit orders on USDT-M futures.</p>
+        </header>
+
+        <form id="order-form">
+          <label>
+            Symbol
+            <select id="symbol">
+              <option value="BTCUSDT">BTCUSDT</option>
+              <option value="ETHUSDT">ETHUSDT</option>
+              <option value="BNBUSDT">BNBUSDT</option>
+            </select>
+          </label>
+
+          <div class="button-row">
+            <button type="button" class="side-btn" data-side="BUY">Buy</button>
+            <button type="button" class="side-btn" data-side="SELL">Sell</button>
+          </div>
+
+          <label>
+            Order Type
+            <select id="order-type">
+              <option value="MARKET">Market</option>
+              <option value="LIMIT">Limit</option>
+            </select>
+          </label>
+
+          <label>
+            Quantity
+            <input id="quantity" type="number" step="0.0001" min="0" placeholder="0.01" />
+          </label>
+
+          <label id="price-field" class="hidden">
+            Price
+            <input id="price" type="number" step="0.01" min="0" placeholder="25000" />
+          </label>
+
+          <button type="submit" class="submit-btn">
+            <span id="submit-text">Submit Order</span>
+            <span id="spinner" class="spinner hidden"></span>
+          </button>
+        </form>
+
+        <section id="result" class="result">
+          <p class="result-title">Order Result</p>
+          <div class="result-grid">
+            <div>
+              <span class="label">Order ID</span>
+              <span id="result-order-id">-</span>
+            </div>
+            <div>
+              <span class="label">Status</span>
+              <span id="result-status">-</span>
+            </div>
+            <div>
+              <span class="label">Executed Qty</span>
+              <span id="result-qty">-</span>
+            </div>
+            <div>
+              <span class="label">Average Price</span>
+              <span id="result-price">-</span>
+            </div>
+          </div>
+          <p id="result-message" class="result-message"></p>
+        </section>
+
+        <section class="history">
+          <div class="history-header">
+            <h2>Recent Orders</h2>
+            <button id="refresh-orders" type="button" class="ghost-btn">Refresh</button>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Symbol</th>
+                  <th>Side</th>
+                  <th>Type</th>
+                  <th>Status</th>
+                  <th>Qty</th>
+                  <th>Price</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody id="orders-body"></tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,3 @@
+API_KEY = "5KPRNsspTirlQSRLEmHVDTuKGP0ZcXF4xXHHxsDB8VeSLPt1TX7vit7yfb7gVjHo"
+API_SECRET = "H8c5I6UDpO1bnQ76OFpknx7wmC3reOx0x9q71SA11Ue6kZ8svHyKLWNnN8LkV9Tf"
+BASE_URL = "https://testnet.binancefuture.com"
